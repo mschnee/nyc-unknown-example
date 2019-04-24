@@ -1,0 +1,29 @@
+{
+  "name": "nyc-unknown-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "ava": "^1.4.1",
+    "body-parser": "^1.18.3",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "nyc": "12.0.2",
+    "source-map-support": "^0.5.12",
+    "supertest": "^4.0.2",
+    "typescript": "^3.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^11.13.7",
+    "rimraf": "^2.6.3"
+  },
+  "scripts": {
+    "clean": "rimraf dist coverage .nyc_output .tsBuildInfo",
+    "build": "tsc -p .",
+    "pretest": "npm run build",
+    "precover": "npm run build",
+    "test": "cross-env NODE_ENV=test ava --fail-fast",
+    "cover": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text-summary ava --fail-fast"
+  }
+}
