@@ -1,6 +1,6 @@
 {
-  "include": ["./src/**/*.js", "./dist/**/*.js"],
-  "exclude": ["./src/**/*.spec.js", "./dist/**/*.test.js"],
+  "include": ["src/**/*.js", "dist/**/*.js"],
+  "exclude": ["src/**/*.spec.js", "dist/**/*.test.js"],
   "reporter": ["lcov", "text-summary"],
   "sourceMap": true,
   "instrument": true,
